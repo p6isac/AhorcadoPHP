@@ -7,5 +7,5 @@ function madeCas(num)
 				var etiqueta = '<div id="casilla'+num+'" ></div>';	
 					document.write(etiqueta);
 				}
-				document.write('<input type="text" id="letra" name="letra" value="[Letra]">\n<input type="submit" value="Enviar">\n</form> ');
+				document.write('<input type="text" id="letra" name="letra" placeholder="letra">\n<input type="submit" value="Enviar">\n</form> ');
 		}

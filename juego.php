@@ -1,6 +1,7 @@
-<?php 
+<?php
+extract($_POST);
 if (!isset($palabra)) {
-	echo "no existe palabra";
+
 		$arch = fopen('palabras.txt','r');
 		$var = fread($arch,filesize('palabras.txt'));
 		//separa las palabras en un arreglo
@@ -29,7 +30,7 @@ if (!isset($palabra)) {
 				<img src="vivo.png">
 				<form method="POST" action="juego.php">
 				<input type="hidden" name="palabra" value="'.$palabra.'">
-				<input type="hidden" name="Casillas" value="">
+				<input type="hidden" name="casillas" value="">
 				<input type="hidden" name="valores" value="">
 				</body>
 				<script type="text/javascript">
@@ -40,6 +41,26 @@ if (!isset($palabra)) {
 
 
 }else{
+
+	echo "la palabra es: ".$palabra."<br>";
+	echo "la letra es: ".$letra."<br>";
+	echo "Casillas es igual a: ".$casillas."<br>";
+	echo "valores es igual a :".$valores."<br>";
+	
+	$numCasillas = strlen($palabra);
+	$arrPal = str_split($palabra);
+
+	for ($i=0; $i < $numCasillas; $i++) 
+	{
+
+		if ($arrPal[$i] == $letra) {
+			$casillas.= $i.",";
+			$valores.=$letra.",";
+		}
+	}
+
+	echo "Casillas es igual a: ".$casillas."<br>";
+	echo "valores es igual a :".$valores."<br>";
 
 
 
