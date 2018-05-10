@@ -1,0 +1,12 @@
+div {
+	width: 20px;
+	height: 20px;
+	background-color: gray;
+	float: left;
+	margin: 2px;
+}
+#letra{
+		width: 60px;
+		height: 25px;
+		clear: both;
+}
