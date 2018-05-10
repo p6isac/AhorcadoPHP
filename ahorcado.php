@@ -1,5 +1,38 @@
 <?php
 
+
+
+if(isset($_POST['letra'])){
+
+
+	$letra=$_POST['letra'];
+	echo $letra;
+	echo "<br/>";
+
+	$palabra=$_POST['palabra'];
+	echo $palabra;
+	echo "<br/>";
+
+	$length=strlen($palabra);
+
+	$ayu=$_POST['ayuda'];
+	echo ''.$ayu.'<br/>';
+//Validando si existe la letra en la palabra
+	$vallet='/['.$letra.']/';
+	$letra2=preg_match($vallet,$palabra);
+	if($letra2==1){
+
+		echo "La letra SI esta en la palabra";
+
+
+	}else{
+
+		echo "La letra NO esta en la palabra";
+	}
+
+
+}else{
+
 echo"<DOCTYPE html>
 	<html lang='es'>
 		<head>
@@ -18,6 +51,7 @@ echo"<DOCTYPE html>
 
 //palabra random seleccionada del archivo
 		$opcion=$separacion[$random];
+		$PAL=$opcion;
 		echo $opcion;
 		echo "<br/>";
 //tamaño de la palabra anterior
@@ -37,14 +71,13 @@ echo"<DOCTYPE html>
 
 
 		for($i=0;$i<$tamaño;$i++){
-
-				
-				echo "<br/>";
+		
+				echo "   ";
 			if($opcion[$i]!=$layuda){
 				$opcion[$i]="___";
 				
 				echo $opcion[$i];
-				echo "<br/>";
+				echo "   ";
 				
 			}elseif ($opcion[$i]=$layuda) {
 
@@ -56,15 +89,24 @@ echo"<DOCTYPE html>
 	
 		fclose($arch);
 
+			echo "<br/></br><br/><br/>";
 
-
+			echo"<form method='POST' action='ahorcado.php'>";
+			echo"<input type='hidden' name='palabra' value='".$PAL."'/>   <br/><br/>";
+			echo"<input type='hidden' name='ayuda' value='".$layuda."'/>   <br/><br/>";
+			
+			echo"					Introduce una letra que creas está entre las faltantes:<br/>";
+			echo"					<input type='text' size='1' maxlength='1' name='letra' />";
+			echo"					<br/><br/>";
+			echo"					<input type='submit' value='Checar'/>";
+			echo"</form>";
 
 echo		"</body>
 	</hmtl>	";	
 
 
 
-
+}
 
 
 
