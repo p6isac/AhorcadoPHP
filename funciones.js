@@ -24,28 +24,32 @@ function validarLetra(coincidencias,errores,casillas,valores)
 			document.getElementById('casilla'+donde[i]).innerHTML = letras[i];
 		}
 
-	}else if (coincidencias == 0)
-	{
+	} 
+
+		console.log(errores);
 		switch(errores)
 		{
-		case "1":
-		document.getElementsByTagName('img').setAttribute('src','A2.jpg');
+		case 1:
+		document.getElementsByTagName('img')[0].setAttribute('src','A2.jpg');
 		break;
-		case "2":
-		document.getElementsByTagName('img').setAttribute('src','A3.jpg');
+		case 2:
+		document.getElementsByTagName('img')[0].setAttribute('src','A3.jpg');
 		break;
-		case "3":
-		document.getElementsByTagName('img').setAttribute('src','A4.jpg');
+		case 3:
+		document.getElementsByTagName('img')[0].setAttribute('src','A4.jpg');
 		break;
-		case "4":
-		document.getElementsByTagName('img').setAttribute('src','A5.jpg');
+		case 4:
+		document.getElementsByTagName('img')[0].setAttribute('src','A5.jpg');
 		break;
-		case "5":
-		document.getElementsByTagName('img').setAttribute('src','A6.jpg');
+		case 5:
+		document.getElementsByTagName('img')[0].setAttribute('src','A6.jpg');
 		window.alert("Ya perdiste");
 		break;
 		default:
 		console.log("no se validan errores");
 		}
-	}
+		if (coincidencias == 0) {
+		document.getElementById('error').innerHTML = 'MAL! Error número '+errores;
+		}
+	
 }

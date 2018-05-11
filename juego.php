@@ -95,6 +95,7 @@ if (!isset($palabra)) {
 				</head>
 				<body>
 				<H1>Bienvenido al juego de Ahorcado</H1>
+				<H3 id="error"></H3>
 				<img src="A1.jpg">
 				<form method="POST" action="juego.php">
 				<input type="hidden" name="palabra" value="'.$palabra.'">
