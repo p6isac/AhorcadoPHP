@@ -36,7 +36,6 @@ if (!isset($palabra)) {
 
 				</body>
 				<script type="text/javascript">
-						window.alert(numCasillas);
 						madeCas(numCasillas);
 				</script>
 				</html>';
@@ -69,7 +68,6 @@ if (!isset($palabra)) {
 	}
 
 	if ($coincidencias==0) {
-		$alerta= 'window.alert("No hay coincidencias");';
 		$errores++;
 	}	
 	echo "Coincidencias: ".$coincidencias."<br>";
@@ -104,7 +102,6 @@ if (!isset($palabra)) {
 				<input type="hidden" name="errores" value="'.$errores.'">
 				</body>
 				<script type="text/javascript">
-						window.alert(numCasillas);
 						madeCas(numCasillas);
 						validarLetra(coincidencias,errores,casillas,valores);
 				</script>

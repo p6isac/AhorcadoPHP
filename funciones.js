@@ -16,7 +16,7 @@ function validarLetra(coincidencias,errores,casillas,valores)
     var donde = casillas.split(",");
 	var letras = valores.split(",");
 
-	if(coincidencias > 0 || donde.length != 0)
+	if(coincidencias > 0 || casillas.length != 0)
 	{
 		console.log(donde);
 		console.log(letras);
