@@ -67,8 +67,11 @@
 		
 		$campos2=$usu.$src;
 
+<<<<<<< HEAD
 		
 
+=======
+>>>>>>> c5d8c0add0bee0d963e953396cbb6f99ace9538e
 		fwrite($arch, $campos);
 		fwrite($imas, $campos2);
 
