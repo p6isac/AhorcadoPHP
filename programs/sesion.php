@@ -9,8 +9,8 @@
 
 	$users= [];
 	
-        $arch=fopen('usuarios.txt','r');
-		$var=fread($arch,filesize('usuarios.txt'));
+        $arch=fopen('documents/usuarios.txt','r');
+		$var=fread($arch,filesize('documents/usuarios.txt'));
 		//echo $var;
 		$separacion=explode(";",$var);
 	//obtenemos usuarios y contraseñas
@@ -33,7 +33,7 @@ echo "<br/>";
 			}else{
 					echo'<script type="text/javascript">
 					    alert("Usuario existe pero contraseña es incorrecta");
-					    window.location.href="index.html";
+					    window.location.href="../index.html";
 					    </script>';
 			}	
 			
@@ -42,7 +42,7 @@ echo "<br/>";
 
 		echo'<script type="text/javascript">
 			alert("El usuario no existe");
-			window.location.href="index.html";
+			window.location.href="../index.html";
 			</script>';
 	}
 

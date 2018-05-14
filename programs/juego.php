@@ -7,8 +7,8 @@ if(isset($_SESSION['nom'])){
 			extract($_POST);
 			if (!isset($palabra)) {
 
-					$arch = fopen('palabras.txt','r');
-					$var = fread($arch,filesize('palabras.txt'));
+					$arch = fopen('documents/palabras.txt','r');
+					$var = fread($arch,filesize('documents/palabras.txt'));
 					//separa las palabras en un arreglo
 					$texto = explode(" ",$var);
 
@@ -26,8 +26,8 @@ if(isset($_SESSION['nom'])){
 					echo '<!DOCTYPE html>
 							<html>
 							<head>
-								<script type="text/javascript" src="funciones.js"></script>
-								<link rel="stylesheet" type="text/css" href="estilos.css">
+								<script type="text/javascript" src="../js/funciones.js"></script>
+								<link rel="stylesheet" type="text/css" href="../css/estilos.css">
 								<title></title>
 							</head>
 							<header>';
@@ -36,7 +36,7 @@ if(isset($_SESSION['nom'])){
 							</header>
 							<body>
 						
-							<img src="resources/images/A1.jpg">
+							<img src="../resources/images/A1.jpg">
 							<form method="POST" action="juego.php">
 								<input type="hidden" name="palabra" value="'.$palabra.'">
 								<input type="hidden" name="casillas" value="">
@@ -99,9 +99,9 @@ if(isset($_SESSION['nom'])){
 				echo '<!DOCTYPE html>
 							<html>
 							<head>
-								<script type="text/javascript" src="funciones.js"></script>
+								<script type="text/javascript" src="../js/funciones.js"></script>
 							
-								<link rel="stylesheet" type="text/css" href="estilos.css">
+								<link rel="stylesheet" type="text/css" href="../css/estilos.css">
 								<title></title>
 							</head>
 								<header>';
@@ -113,7 +113,7 @@ if(isset($_SESSION['nom'])){
 							<body>
 							
 							
-							<img src="resources/images/A1.jpg">
+							<img src="../resources/images/A1.jpg">
 							<form method="POST" action="juego.php">
 								<input type="hidden" name="palabra" value="'.$palabra.'">
 								<input type="hidden" name="casillas" value="'.$casillas.'">
@@ -147,7 +147,7 @@ if(isset($_SESSION['nom'])){
 
 		echo'<script type="text/javascript">
 			alert("Inicia Sesión");
-			window.location.href="index.html";
+			window.location.href="../index.html";
 			</script>';
 
 

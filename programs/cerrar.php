@@ -5,7 +5,7 @@
 	session_destroy();
 	
 	echo "<script>";	 
-	echo "window.location = 'index.html'";
+	echo "window.location = '../index.html'";
 	echo "</script>";
 
 

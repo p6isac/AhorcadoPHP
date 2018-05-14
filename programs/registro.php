@@ -14,7 +14,7 @@
 
   	if(($valusuario==1)&&($valcontra==1)){
 
-		$arch=fopen('usuarios.txt','a');
+		$arch=fopen('documents/usuarios.txt','a');
 
 		$usu.=",";
 		$contra.=";";
@@ -24,7 +24,7 @@
 
 		echo'<script type="text/javascript">
 					    alert("Usuario registrado");
-					    window.location.href="index.html";
+					    window.location.href="../index.html";
 		</script>';
 
 
@@ -32,7 +32,7 @@
 
 		echo'<script type="text/javascript">
 					    alert("Usuario o contraseña incorrectos");
-					    window.location.href="registro.html";
+					    window.location.href="../registro.html";
 		</script>';
 
   	}
