@@ -45,43 +45,18 @@ function validarLetra(coincidencias,errores,casillas,valores,numCasillas)
 {
     var donde = casillas.split(",");
 	var letras = valores.split(",");
-	console.log(numCasillas);
-	console.log(coincidencias);
-	console.log(casillas);
-	console.log(valores);
-	var NT=casillas.length-(numCasillas-1);
-	console.log(NT);
-	//console.log(letra);
-
-	//
-	//console.log(ULTI);
-
-	
-		
 
 			if(coincidencias >0 || casillas.length != 0)
 			{
-				console.log(donde);
-				console.log(letras);
-				for (var i = 0; i < donde.length; i++) {
+				for (var i = 0; i < donde.length; i++) 
+				{
 
-				
-				
-			
 					document.getElementById('casilla'+donde[i]).innerHTML = letras[i];
 
-			}
-					if(numCasillas==NT){
-
-					alert("Ya ganaste");
-					ganaste();
-					}
-
-			}
-
+				}
 		
-			
 
+			}
 		
 		switch(errores)
 		{
@@ -99,14 +74,11 @@ function validarLetra(coincidencias,errores,casillas,valores,numCasillas)
 		break;
 		case 5:
 		document.getElementsByTagName('img')[0].setAttribute('src','../resources/images/A6.jpg');
-		//window.alert("Ya perdiste");
-		perdiste();
-
 		break;
-
 		default:
 		}
-		if (coincidencias == 0) {
+		if (coincidencias == 0) 
+		{
 		document.getElementById('error').innerHTML = 'MAL! Error número '+errores;
 		}
 	
