@@ -17,33 +17,32 @@ echo"<!DOCTYPE html>
 		$var=fread($arch,filesize('documents/imasusu.txt'));
 		//echo $var;
 		$separacion=explode(";",$var);
-	//obtenemos usuarios y contraseñas
+	//obtenemos usuarios y urls
 		for ($i=0; $i < count($separacion) ; $i++) { 
 			$separacion[$i] = explode(',', $separacion[$i]);
 			$users[$separacion[$i][0]] = $separacion[$i][1];
 		}
-	
+		//print_r($users);
+		//imprime asi:
+		// [usuario]=> urlImagen;
 
-	if(isset($users[$_SESSION['nom']])){
+	if(isset($users[$_SESSION['nom']]))
+	{
 
-		if($users[$_SESSION['nom']]==$_SESSION['src']){
+		
 
-					echo "<img src='".$_SESSION['src']."' name='efectojs'>";
+					echo "<img src='".$users[$_SESSION['nom']]."' name='efectojs'>";
 				
-			}else{
-					echo'<script type="text/javascript">
-					    alert("Tu usuario no tiene imagen!!");
-					  
-					    </script>';
-			}	
+			
 			
 		
 	}else{
 
-		echo'<script type="text/javascript">
-			alert("El usuario no existe");
-			window.location.href="../index.html";
-			</script>';
+	
+					echo'<script type="text/javascript">
+					    alert("Tu usuario no tiene imagen!!");
+					  
+					    </script>';
 	}
 
 

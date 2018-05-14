@@ -47,6 +47,7 @@ if(isset($_SESSION['nom']))
 
 							</body>
 							<script type="text/javascript">
+							window.alert("REGLAS:\n -Se inician con 100 puntos \n -Tienes 5 oportunidades de equivocarte \n -Por cada error se restan 20 puntos \n -En caso de llegar a los 5 errores pierdes automaticamente y tendras que elegir entre volver a jugar o salir. ");
 									madeCas(numCasillas);
 							</script>
 							</html>';
