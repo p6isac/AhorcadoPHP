@@ -27,7 +27,7 @@ echo "<br/>";
 		if($users[$usuario]==$contra){
 					echo'<script type="text/javascript">
 					    alert("Usuario y contraseña correctos");
-					    window.location.href="juego.php";
+					    window.location.href="perfil.php";
 					    </script>';
 				
 			}else{

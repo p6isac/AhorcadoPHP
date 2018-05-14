@@ -12,14 +12,18 @@
 			</header>
 			<body>
 				<div>
-					<form method='POST' action='programs/registro.php'>
+					<form method='POST' action='programs/registro.php'  enctype="multipart/form-data" >
 						<p>Nombre de usuario:</p>  
 						<input type='text' name='username' required></p>
 						<p>Contraseña: </p>
 						<input type='password' name='contra' required></p>
+						 
+						<input type="file" name="archpru" accept="image/*"/><br/> 
+						
 						<input type='submit'  value='REGISTRAR'/>
 						
 					</form>
+					
 
 				</div>
 			
