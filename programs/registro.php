@@ -67,7 +67,7 @@
 		
 		$campos2=$usu.$src;
 
-		$_SESSION['src']=$src;
+		
 
 		fwrite($arch, $campos);
 		fwrite($imas, $campos2);
