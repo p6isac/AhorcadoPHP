@@ -1,6 +1,9 @@
 <?php
 extract($_POST);
-if (!isset($palabra)) {
+
+
+if (!isset($palabra)) 
+{
 
 		$arch = fopen('palabras.txt','r');
 		$var = fread($arch,filesize('palabras.txt'));
@@ -41,7 +44,9 @@ if (!isset($palabra)) {
 				</html>';
 
 
-}else{
+}
+else if ($errores < 5 && $aciertos < strlen($palabra))
+{
 	$letra = strtoupper($letra);
 
 	echo "la palabra es: ".$palabra."<br>";
@@ -70,43 +75,61 @@ if (!isset($palabra)) {
 	if ($coincidencias==0) {
 		$errores++;
 	}	
-	echo "Coincidencias: ".$coincidencias."<br>";
-	echo "Casillas es igual a: ".$casillas."<br>";
-	echo "valores es igual a :".$valores."<br>";
-//enviamos las variables a javascript
-	echo "<script>\n";
-	echo "var numCasillas = ".$numCasillas.";\n"; 
-	echo "var casillas = '".$casillas."';\n"; 
-	echo "var coincidencias = ".$coincidencias.";\n"; 
-	echo "var valores = '".$valores."';\n"; 	
-	echo "var errores = ".$errores.";\n"; 	
-	echo "</script>";
 
-	echo '<!DOCTYPE html>
-				<html>
-				<head>
-					<script type="text/javascript" src="funciones.js">
-					'.$alerta.'
-					</script>
-					<link rel="stylesheet" type="text/css" href="estilos.css">
-					<title></title>
-				</head>
-				<body>
-				<H1>Bienvenido al juego de Ahorcado</H1>
-				<H3 id="error"></H3>
-				<img src="A1.jpg">
-				<form method="POST" action="juego.php">
-				<input type="hidden" name="palabra" value="'.$palabra.'">
-				<input type="hidden" name="casillas" value="'.$casillas.'">
-				<input type="hidden" name="valores" value="'.$valores.'">
-				<input type="hidden" name="errores" value="'.$errores.'">
-				</body>
-				<script type="text/javascript">
-						madeCas(numCasillas);
-						validarLetra(coincidencias,errores,casillas,valores);
-				</script>
-				</html>';
+	//calcular aciertos
+	$aciertos = count(explode(",", $valores));
+	//si la cantidad de letras acertadas es igual a la cantidad de letras de la palabra 
+	if($aciertos == $numCasillas)
+	{
+	echo "<h1> Ganaste la palabra es: ".$palabra." </h1>";
+	}
+		else if ($errores == 5)
+		{
+
+			echo"<h1> Ya perdiste campion </h1>";
+
+		} 
+		else
+		{
+			echo "Coincidencias: ".$coincidencias."<br>";
+			echo "Casillas es igual a: ".$casillas."<br>";
+			echo "valores es igual a :".$valores."<br>";
+		//enviamos las variables a javascript
+			echo "<script>\n";
+			echo "var numCasillas = ".$numCasillas.";\n"; 
+			echo "var casillas = '".$casillas."';\n"; 
+			echo "var coincidencias = ".$coincidencias.";\n"; 
+			echo "var valores = '".$valores."';\n"; 	
+			echo "var errores = ".$errores.";\n"; 	
+			echo "</script>";
+
+			echo '<!DOCTYPE html>
+						<html>
+						<head>
+							<script type="text/javascript" src="funciones.js">
+							'.$alerta.'
+							</script>
+							<link rel="stylesheet" type="text/css" href="estilos.css">
+							<title></title>
+						</head>
+						<body>
+						<H1>Bienvenido al juego de Ahorcado</H1>
+						<H3 id="error"></H3>
+						<img src="A1.jpg">
+						<form method="POST" action="juego.php">
+						<input type="hidden" name="palabra" value="'.$palabra.'">
+						<input type="hidden" name="casillas" value="'.$casillas.'">
+						<input type="hidden" name="valores" value="'.$valores.'">
+						<input type="hidden" name="errores" value="'.$errores.'">
+						</body>
+						<script type="text/javascript">
+								madeCas(numCasillas);
+								validarLetra(coincidencias,errores,casillas,valores);
+						</script>
+						</html>';
+		}
 }
+
 
 
 
