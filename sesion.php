@@ -7,7 +7,6 @@
 
 	$_SESSION['nom']=$usuario;
 
-
 	$users= [];
 	
         $arch=fopen('usuarios.txt','r');
@@ -21,23 +20,20 @@
 		}
 	
 	echo "<br/>";
-	$clave = array_search($contra, $users);
-	
-
 	
 echo "<br/>";
 	if(isset($users[$usuario])){
 
-		if($clave==true){
+		if($users[$usuario]==$contra){
 					echo'<script type="text/javascript">
 					    alert("Usuario y contraseña correctos");
-					    window.location.href="ahorcado.php";
+					    window.location.href="juego.php";
 					    </script>';
 				
 			}else{
 					echo'<script type="text/javascript">
 					    alert("Usuario existe pero contraseña es incorrecta");
-					    window.location.href="index.php";
+					    window.location.href="index.html";
 					    </script>';
 			}	
 			
@@ -46,7 +42,7 @@ echo "<br/>";
 
 		echo'<script type="text/javascript">
 			alert("El usuario no existe");
-			window.location.href="index.php";
+			window.location.href="index.html";
 			</script>';
 	}
 
