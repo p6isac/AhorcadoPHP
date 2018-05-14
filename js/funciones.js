@@ -86,19 +86,19 @@ function validarLetra(coincidencias,errores,casillas,valores,numCasillas)
 		switch(errores)
 		{
 		case 1:
-		document.getElementsByTagName('img')[0].setAttribute('src','resources/images/A2.jpg');
+		document.getElementsByTagName('img')[0].setAttribute('src','../resources/images/A2.jpg');
 		break;
 		case 2:
-		document.getElementsByTagName('img')[0].setAttribute('src','resources/images/A3.jpg');
+		document.getElementsByTagName('img')[0].setAttribute('src','../resources/images/A3.jpg');
 		break;
 		case 3:
-		document.getElementsByTagName('img')[0].setAttribute('src','resources/images/A4.jpg');
+		document.getElementsByTagName('img')[0].setAttribute('src','../resources/images/A4.jpg');
 		break;
 		case 4:
-		document.getElementsByTagName('img')[0].setAttribute('src','resources/images/A5.jpg');
+		document.getElementsByTagName('img')[0].setAttribute('src','../resources/images/A5.jpg');
 		break;
 		case 5:
-		document.getElementsByTagName('img')[0].setAttribute('src','resources/images/A6.jpg');
+		document.getElementsByTagName('img')[0].setAttribute('src','../resources/images/A6.jpg');
 		//window.alert("Ya perdiste");
 		perdiste();
 
