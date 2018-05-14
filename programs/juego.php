@@ -95,6 +95,16 @@ if(isset($_SESSION['nom']))
 							{
 							echo"<script>\nwindow.alert('Ya ganaste!');\n</script> ";
 							$GameOver="\n ganaste(); \n";
+								//registramos los scores en un documento txt
+								$usu = $_SESSION['nom'];
+								$scores = 100 -($errores*20);
+								$arch=fopen('documents/scores.txt','a');
+								$usu.=",";
+								$scores.=";";
+								$campos=$usu.$scores;
+								fwrite($arch, $campos);
+								fclose($arch);
+
 							}
 							//si llego a 5 errores
 							else if ($errores == 5)
